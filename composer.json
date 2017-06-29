@@ -1,5 +1,5 @@
 {
-    "name": "jonatan/auth0-lumen",
+    "name": "jonafrank/auth0-lumen",
     "description": "Auth0 service provider for lumen",
     "type": "library",
     "require": {
