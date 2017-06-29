@@ -1,0 +1,19 @@
+{
+    "name": "jonatan/auth0-lumen",
+    "description": "Auth0 service provider for lumen",
+    "type": "library",
+    "require": {
+        "auth0/auth0-php": "~5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2"
+    },
+    "license": "Apache2",
+    "authors": [
+        {
+            "name": "Jonatan Frank",
+            "email": "jonafrank@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
