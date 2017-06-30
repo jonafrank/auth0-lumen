@@ -15,5 +15,15 @@
             "email": "jonafrank@gmail.com"
         }
     ],
+    "autoload": {
+      "psr-4": {
+        "Auth0\\Lumen\\": "src/"
+      }
+    },
+    "dev-autoload": {
+      "psr-4": {
+        "Tests\\Auth0\\Lumen\\": "tests/"
+      }
+    },
     "minimum-stability": "dev"
 }
