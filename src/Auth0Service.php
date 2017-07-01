@@ -37,7 +37,7 @@ class Auth0Service
             'persist_user'         => env('AUTH0_PERSIST_USER', true),
             'persist_access_token' => env('AUTH0_PERSIST_ACCES_TOKEN', false),
             'pesist_id_token'      => env('AUTH0_PESIST_ID_TOKEN', false),
-            'api_identifier'       => env('AUTH)_API_IDENTIFIER', ''),
+            'api_identifier'       => env('AUTH0_API_IDENTIFIER', ''),
             'authorized_issuers'   => (env('AUTH0_AUTHORIZED_ISSUERS')) ? explode(',', env('AUTH0_AUTHORIZED_ISSUERS')) : [],
             'suported_algs'        => (env('AUTH0_SUPORTED_ALGS')) ? explode(',', env('AUTH0_SUPORTED_ALGS')) : []
         ];
