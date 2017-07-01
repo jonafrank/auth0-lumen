@@ -36,7 +36,7 @@ class Auth0ServiceProvider extends ServiceProvider
         $oldInfoHeaders = ApiClient::getInfoHeadersData();
 
         if ($oldInfoHeaders) {
-            $infoHeaders = InformationHeaders::Extends($oldInfoHeaders);
+            $infoHeaders = InformationHeaders::Extend($oldInfoHeaders);
             $infoHeaders->setEnvironment('Lumen', app()->version());
             $infoHeaders->setPackage('lumen-auth0', self::SDK_VERSION);
 
