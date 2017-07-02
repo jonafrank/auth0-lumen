@@ -17,9 +17,9 @@ class Auth0Controller extends Controller
      *
      * @param Auth0UserRepository $userRepository
      */
-    public function __construct(Auth0UserRepository $userRepository)
+    public function __construct()
     {
-        $this->userRepository = $userRepository;
+        this->userRepository = app()->make(\Auth0\Lumen\Repository\Auth0UserRepository::class);
     }
 
     /**
@@ -49,6 +49,6 @@ class Auth0Controller extends Controller
             app()->login($user, $service->rememberUser());
         }
 
-        return \Redirect::intended('/');
+        return redirect(env('AUTH0_CALLBACK_REDIRECT', '/'));
     }
 }
