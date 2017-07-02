@@ -42,6 +42,7 @@ class Auth0ServiceProvider extends ServiceProvider
 
             ApiClient::setInfoHeadersData($infoHeaders);
         }
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
+        require __DIR__ . '/routes/web.php';
     }
 }
