@@ -44,7 +44,7 @@ class Auth0ServiceProvider extends ServiceProvider
         }
         app()->routeMiddleware([
             'auth0' => Auth0\Lumen\Middleware\Auth0Authnticate::class
-        ])
+        ]);
         require __DIR__ . '/routes/web.php';
     }
 }
