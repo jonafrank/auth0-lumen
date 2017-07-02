@@ -9,6 +9,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Auth0Service
 {
+    public $remember_user;
     protected $auth0_config;
     protected $auth_api;
     protected $ahut0;
@@ -18,7 +19,7 @@ class Auth0Service
     {
         $this->auth0_config = $this->loadConfig();
         $this->auth_api = new Authentication($this->auth0_config['domain'], $this->auth0_config['client_id']);
-        $this->auth0 = new Auht0($this->auth0_config);
+        $this->auth0 = new Auth0($this->auth0_config);
     }
 
     /**
@@ -42,6 +43,7 @@ class Auth0Service
             'suported_algs'        => (env('AUTH0_SUPORTED_ALGS')) ? explode(',', env('AUTH0_SUPORTED_ALGS')) : []
         ];
         $config['store'] = new LumenSessionStore();
+        return $config;
     }
 
     /**
@@ -117,7 +119,7 @@ class Auth0Service
      */
     public function callOnLogin($auth0_user)
     {
-        return call_user_func($this->_onLoginCb, $auth0User);
+        return call_user_func($this->_on_login_cb, $auth0_user);
     }
 
     /**
