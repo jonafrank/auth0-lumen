@@ -5,7 +5,7 @@ use Closure;
 use Auth0\Lumen\Repository\Auth0UserRepository;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
-class Auth0Authnticate
+class Auth0Authenticate
 {
     protected $user_repository;
 
