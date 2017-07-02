@@ -46,7 +46,9 @@ class Auth0Controller extends Controller
                 // If not, the user will be fine
                 $user = $auth0User;
             }
-            app()->login($user, $service->rememberUser());
+            app()->make('auth')->viaRequest('api', function() use ($user){
+                return $user;
+            });
         }
 
         return redirect(env('AUTH0_CALLBACK_REDIRECT', '/'));
