@@ -13,7 +13,7 @@ class Auth0Authenticate
 
     protected $service;
 
-    public function __construct(Auth $auth);
+    public function __construct(Auth $auth)
     {
         $this->auth = $auth;
         $this->user_repository = app()->make(Auth0UserRepository::class);
