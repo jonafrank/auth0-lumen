@@ -1,6 +1,6 @@
 <?php
 
-namespace Auth0\Lumen;
+namespace Auth0\Lumen\Http;
 
 use Auth0\Lumen\Contract\Auth0UserRepository;
 use Illuminate\Routing\Controller;
