@@ -19,7 +19,7 @@ class Auth0Controller extends Controller
      */
     public function __construct()
     {
-        this->userRepository = app()->make(\Auth0\Lumen\Repository\Auth0UserRepository::class);
+        $this->userRepository = app()->make(\Auth0\Lumen\Repository\Auth0UserRepository::class);
     }
 
     /**
