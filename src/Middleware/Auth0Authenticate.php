@@ -28,7 +28,7 @@ class Auth0Authenticate
         }
 
         $auth0_user = $this->user_repository->getUserByUserInfo($profile);
-        $this->auth->viaRequest('api'. function() use ($auth0_user) {
+        $this->auth->viaRequest('api', function() use ($auth0_user) {
             return $auth0_user;
         });
         return $next($request);
