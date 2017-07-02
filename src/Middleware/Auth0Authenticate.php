@@ -27,7 +27,7 @@ class Auth0Authenticate
             return response('Unauthorized', 401);
         }
 
-        $auth0_user = $this->userRepository->getUserByUserInfo($profile);
+        $auth0_user = $this->user_repository->getUserByUserInfo($profile);
         $this->auth->viaRequest('api'. function() use ($auth0_user) {
             return $auth0_user;
         });
