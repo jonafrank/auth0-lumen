@@ -3,7 +3,7 @@
 namespace Auth0\Lumen\Http;
 
 use Auth0\Lumen\Contract\Auth0UserRepository;
-use Laravel\Lumen\Routing\Controller
+use Laravel\Lumen\Routing\Controller;
 
 class Auth0Controller extends Controller
 {
