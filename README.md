@@ -68,6 +68,20 @@ AUTH0_AUTHORIZED_ISSUERS=
 AUTH0_SUPORTED_ALGS=HS256
 ```
 
+In your bootstrap/app.php file add the next line.
+```php
+// bootstrap/app.php
+<?php
+...
+/*
+|--------------------------------------------------------------------------
+| Register Service Providers
+|--------------------------------------------------------------------------
+*/
+$app->register(Auth0\Lumen\Auth0ServiceProvider::class);
+?>
+```
+
 And then create a view that triggers the Auth0 login.
 
 ```html
@@ -84,4 +98,19 @@ And then create a view that triggers the Auth0 login.
     });
     </script>
     <button onclick="lock.show();">Login</button>
+```
+
+## Dealing with Authorization
+In order to secure routes with the Auth0 login you need to use the 'auth0' middleware.
+
+```php 
+<?php
+// routes/web.php
+...
+$app->get('/secured-route', ['middleware' => 'auth0', function() use ($app) {
+    ... 
+    dump(Auth::user()); // used to retrieve the authenticated user
+}]);
+
+?>
 ```
