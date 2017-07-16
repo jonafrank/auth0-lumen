@@ -43,7 +43,8 @@ class Auth0ServiceProvider extends ServiceProvider
             ApiClient::setInfoHeadersData($infoHeaders);
         }
         app()->routeMiddleware([
-            'auth0' => \Auth0\Lumen\Middleware\Auth0Authenticate::class
+            'auth0' => \Auth0\Lumen\Middleware\Auth0Authenticate::class,
+            'auth0.jwt' => \Auth0\Lumen\Middleware\Auth0JWT::class
         ]);
         require __DIR__ . '/routes/web.php';
     }
