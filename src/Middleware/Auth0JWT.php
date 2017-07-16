@@ -18,9 +18,10 @@ class Auth0JWT
      *
      * @param Auth0UserRepository $userRepository
      */
-    public function __construct(Auth0UserRepository $userRepository, Auth $auth)
+    public function __construct(Auth $auth)
     {
-        $this->userRepository = $userRepository;
+        $this->userRepository = app()->make(Auth0UserRepository::class);
+        $this->auth = $auth;
     }
 
     /**
