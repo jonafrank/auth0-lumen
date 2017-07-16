@@ -13,6 +13,7 @@ class Auth0Service
     protected $auth0_config;
     protected $auth_api;
     protected $ahut0;
+    protected $apiuser;
     protected $on_login_cb = null;
 
     public function __construct()
