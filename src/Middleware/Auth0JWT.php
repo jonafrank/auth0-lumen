@@ -2,7 +2,7 @@
 namespace Auth0\Lumen\Middleware;
 
 use Closure;
-use Auth0\Lumen\Contract\Auth0UserRepository;
+use Auth0\Lumen\Repository\Auth0UserRepository;
 use Auth0\SDK\Exception\CoreException;
 use Auth0\SDK\Exception\InvalidTokenException;
 use Illuminate\Contracts\Auth\Factory as Auth;
