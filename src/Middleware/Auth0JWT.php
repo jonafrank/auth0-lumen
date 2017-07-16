@@ -59,7 +59,7 @@ class Auth0JWT
          $token = $this->getToken($request);
 
          if (!$this->validateToken($token)) {
-             return respnse('Unauthorized user', 401);
+             return response('Unauthorized user', 401);
          }
 
          if ($token) {
