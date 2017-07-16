@@ -5,7 +5,7 @@ use Closure;
 use Auth0\Lumen\Contract\Auth0UserRepository;
 use Auth0\SDK\Exception\CoreException;
 use Auth0\SDK\Exception\InvalidTokenException;
-use Illuminate\Repository\Auth\Factory as Auth;
+use Illuminate\Contracts\Auth\Factory as Auth;
 
 class Auth0JWT
 {
