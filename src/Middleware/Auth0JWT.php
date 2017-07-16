@@ -5,7 +5,7 @@ use Closure;
 use Auth0\Lumen\Contract\Auth0UserRepository;
 use Auth0\SDK\Exception\CoreException;
 use Auth0\SDK\Exception\InvalidTokenException;
-use Illuminate\Contracts\Auth\Factory as Auth;
+use Illuminate\Repository\Auth\Factory as Auth;
 
 class Auth0JWT
 {
@@ -56,7 +56,6 @@ class Auth0JWT
      public function handle($request, Closure $next)
      {
          $auth0 = app()->make('auth0');
-
          $token = $this->getToken($request);
 
          if (!$this->validateToken($token)) {

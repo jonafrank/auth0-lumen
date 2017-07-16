@@ -157,7 +157,7 @@ class Auth0Service
         if (is_null($secret_base64_encoded)) {
           $secret_base64_encoded = true;
         }
-
+        
         $verifier = new JWTVerifier([
             'valid_audiences'       => [$this->auth0_config['client_id'], $this->auth0_config['api_identifier']],
             'supported_algs'        => (!empty($this->auth0_config['supported_algs'])) ? $this->auth0_config['supported_algs'] : ['HS256'],
