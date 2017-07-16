@@ -39,8 +39,7 @@ AUTH0_CLIENT_ID=XXXXX
 AUTH0_CLIENT_SECRET=XXXXX
 
 # The redirect URI.  
-# Should be the same that the one configure in the route to handle the
-# 'Auth0\Lumen\Http\Auth0Controller@callback'
+# Should be a route to the callback implementation.
 AUTH0_REDIRECT_URI=http://<host>/auth0/callback
 
 # Persistence Configuration
@@ -82,6 +81,8 @@ $app->register(Auth0\Lumen\Auth0ServiceProvider::class);
 ?>
 ```
 
+
+
 And then create a view that triggers the Auth0 login.
 
 ```html
@@ -103,12 +104,12 @@ And then create a view that triggers the Auth0 login.
 ## Dealing with Authorization
 In order to secure routes with the Auth0 login you need to use the 'auth0' middleware.
 
-```php 
+```php
 <?php
 // routes/web.php
 ...
 $app->get('/secured-route', ['middleware' => 'auth0', function() use ($app) {
-    ... 
+    ...
     dump(Auth::user()); // used to retrieve the authenticated user
 }]);
 
