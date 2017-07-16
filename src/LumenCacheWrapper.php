@@ -1,6 +1,6 @@
 <?php
 
-namespace Auth0\Login;
+namespace Auth0\Lumen;
 
 use Illuminate\Cache\Repository;
 use Auth0\SDK\Helpers\Cache\CacheHandler;
