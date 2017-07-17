@@ -38,6 +38,9 @@ AUTH0_CLIENT_ID=XXXXX
 # Your APP secret. As set in the auth0 administration page
 AUTH0_CLIENT_SECRET=XXXXX
 
+# Api secret or signing secret used to decode JWT.
+AUTH0_API_SECRET=
+
 # The redirect URI.  
 # Should be a route to the callback implementation.
 AUTH0_REDIRECT_URI=http://<host>/auth0/callback
@@ -101,6 +104,11 @@ And then create a view that triggers the Auth0 login.
     <button onclick="lock.show();">Login</button>
 ```
 
+## Create a callback
+You will need to create a callback action in order to deal with the login. You can take the next as example for general propouses
+
+```
+
 ## Dealing with Authorization
 In order to secure routes with the Auth0 login you need to use the 'auth0' middleware.
 
@@ -114,4 +122,14 @@ $app->get('/secured-route', ['middleware' => 'auth0', function() use ($app) {
 }]);
 
 ?>
+```
+
+If you want to use JWT to authorization of an endpoint. use the auth0.jwt middleware
+
+```php
+<?php
+...
+$app->get('/api-secure', ['middleware'=> 'auth0.jwt', function() use ($app) {
+    dump(Auth::user());
+}]);
 ```
