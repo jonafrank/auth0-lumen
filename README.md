@@ -142,7 +142,6 @@ class Auth0Controller extends Controller
     {
         // Get a handle of the Auth0 service (we don't know if it has an alias)
         $service = app()->make('auth0');
-        // $service->logout();
         // Try to get the user information
         $profile = $service->getUser();
          // Get the user related to the profile
