@@ -110,8 +110,6 @@ You will need to create a callback action in order to deal with the login. You c
 ```php
 <?php
 // app/Http/Controllers/Auth0Controller
-
-<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
