@@ -158,10 +158,12 @@ class Auth0Service
           $secret_base64_encoded = false;
         }
 
+        $signing_secret = env('AUTH0_API_SECRET', $this->auth0_config['client_secret']);
+
         $verifier = new JWTVerifier([
             'valid_audiences'       => [$this->auth0_config['client_id'], $this->auth0_config['api_identifier']],
             'supported_algs'        => (!empty($this->auth0_config['supported_algs'])) ? $this->auth0_config['supported_algs'] : ['HS256'],
-            'client_secret'         => env('AUTH0_API_SECRET'),
+            'client_secret'         => $signing_secret,
             'authorized_iss'        => $this->auth0_config['authorized_issuers'],
             'secret_base64_encoded' => $secret_base64_encoded,
             'cache'                 => $cache,
