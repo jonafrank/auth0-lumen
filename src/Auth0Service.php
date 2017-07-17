@@ -91,7 +91,7 @@ class Auth0Service
 
         return [
             'profile'     => $user,
-            'accessToken' => $auth0->getAccessToken(),
+            'accessToken' => $auth0->getAccessToken()
         ];
     }
 
@@ -155,7 +155,7 @@ class Auth0Service
         $secret_base64_encoded = env('AUTH0_SECRET_BASE64_ENCODED');
 
         if (is_null($secret_base64_encoded)) {
-          $secret_base64_encoded = true;
+          $secret_base64_encoded = false;
         }
 
         $verifier = new JWTVerifier([

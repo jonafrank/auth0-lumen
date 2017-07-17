@@ -62,7 +62,6 @@ class Auth0JWT
              return response('Unauthorized user', 401);
          }
 
-         $authorize_token = $auth0->authorizeAccessToken($token);
 
          if ($token) {
              try {
